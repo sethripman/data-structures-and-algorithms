@@ -1,4 +1,4 @@
-const { arrayShift, arrayRemoveMiddle } = require('../challenges/arrayShift/array-shift');
+const { arrayShift } = require('../challenges/arrayShift/array-shift');
 
 describe('array shift function', () => {
   it('should take an array and a value as input and return a new array identical to the original except with the value inserted in the middle position of the array', () => {
