@@ -35,6 +35,6 @@ describe('insertAfter function', () => {
   
     linkedList.insertAfter(2, 2.5);
   
-    expect(linkedList.toString()).toEqual('1 ->  2 -> 2.5 -> 3');
+    expect(linkedList.toString()).toEqual('1 -> 2 -> 2.5 -> 3');
   });
 });
