@@ -1,5 +1,5 @@
 // Reverse half the array in place
-export const halfReverse = (array) => {
+const halfReverse = (array) => {
   for(let i = 0; i <= Math.floor((array.length - 1) / 2); i++) {
     let current = array[i];
     array[i] = array[array.length - 1 - i];
@@ -23,7 +23,7 @@ const successfulReverse = (array, newArray) => {
   return false;
 };
 
-export const dankReverse = (array) => {
+const dankReverse = (array) => {
   let finished = false;
   let newArray = [];
   while(finished === false){
@@ -34,7 +34,7 @@ export const dankReverse = (array) => {
 };
 
 // Pop reverse, two arrays
-export const popReverse = (array) => {
+const popReverse = (array) => {
   let newArray = [];
   for(let i = array.length; i > 0; i--) {
     newArray.push(array[i]);
@@ -43,4 +43,7 @@ export const popReverse = (array) => {
 };
 
 //map reverse, functional programming implementation
-export const mapReverse = array => [...array].map(array.pop, array);
+const mapReverse = array => [...array].map(array.pop, array);
+
+module.exports = { mapReverse };
+

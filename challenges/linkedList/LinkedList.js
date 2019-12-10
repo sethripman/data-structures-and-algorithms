@@ -1,3 +1,5 @@
+const { mapReverse } = require('../arrayReverse/array-reverse');
+
 class Node { // from demo code
   constructor(val, next = null) {
     this.value = val;
@@ -70,6 +72,20 @@ class LinkedList {
     currentNode.next = newNode;
   }
 
+  kthFromEnd(k){
+    const arrayFromList = [];
+    let current = this.head;
+
+    if(Math.sign(k) === -1 || !current) return 'Exception';
+
+    while(current) {
+      arrayFromList.push(current.value);
+      current = current.next;
+    }
+
+    if(k > arrayFromList.length) return 'Exception';
+    return mapReverse(arrayFromList)[k];
+  }
 }
   
 module.exports = { Node, LinkedList };
