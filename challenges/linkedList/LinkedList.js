@@ -1,4 +1,4 @@
-const mapReverse = require('../arrayReverse/array-reverse');
+const { mapReverse } = require('../arrayReverse/array-reverse');
 
 class Node { // from demo code
   constructor(val, next = null) {
@@ -83,6 +83,7 @@ class LinkedList {
       current = current.next;
     }
 
+    if(k > arrayFromList.length) return 'Exception';
     return mapReverse(arrayFromList)[k];
   }
 }
