@@ -54,10 +54,21 @@ class LinkedList {
     while(currentNode.next.value !== value){
       currentNode = currentNode.next;
     }
+    
     newNode.next = currentNode.next;
     currentNode.next = newNode;
   }
 
+  insertAfter(value, newValue){
+    const newNode = new Node(newValue);
+    let currentNode = this.head;
+    while(currentNode.value !== value){
+      currentNode = currentNode.next;
+    }
+
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
+  }
 
 }
   
