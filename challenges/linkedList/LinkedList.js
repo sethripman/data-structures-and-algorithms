@@ -39,7 +39,13 @@ class LinkedList {
   }
 
   append(value) {
-
+    let searchNode = this.head;
+    let previousNode;
+    while(searchNode) {
+      previousNode = searchNode;
+      searchNode = searchNode.next;
+    }
+    previousNode.next = new Node(value);
   }
 }
   

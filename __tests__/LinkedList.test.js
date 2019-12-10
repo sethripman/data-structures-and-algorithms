@@ -9,7 +9,7 @@ describe('append function', () => {
 
     linkedList.append(0);
 
-    expect(linkedList.toString()).toEqual([2, 4, 5, 6, 8]);
+    expect(linkedList.toString()).toEqual('1 -> 2 -> 3 -> 0');
   });
 });
 
