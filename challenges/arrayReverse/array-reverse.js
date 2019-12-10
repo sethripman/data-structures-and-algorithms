@@ -1,5 +1,5 @@
 // Reverse half the array in place
-export const halfReverse = (array) => {
+expor const halfReverse = (array) => {
   for(let i = 0; i <= Math.floor((array.length - 1) / 2); i++) {
     let current = array[i];
     array[i] = array[array.length - 1 - i];
