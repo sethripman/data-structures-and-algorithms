@@ -11,6 +11,17 @@ describe('append function', () => {
 
     expect(linkedList.toString()).toEqual('1 -> 2 -> 3 -> 0');
   });
+
+  it('should take a value and append a new Node with that value at the end of the list, multiple times', () => {
+    const linkedList = new LinkedList();
+    linkedList.insert(3);
+    linkedList.insert(2);
+    linkedList.insert(1);
+
+    linkedList.append(4)(5);
+
+    expect(linkedList.toString()).toEqual('1 -> 2 -> 3 -> 4 -> 5');
+  });
 });
 
 describe('insertBefore function', () => {
