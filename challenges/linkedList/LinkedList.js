@@ -47,6 +47,18 @@ class LinkedList {
     }
     previousNode.next = new Node(value);
   }
+
+  insertBefore(value, newValue) {
+    let searchNode = this.head;
+    let previousNode;
+    while(searchNode) {
+      previousNode = searchNode;
+      searchNode = searchNode.next;
+    }
+    previousNode.next = new Node(value);
+  }
+
+
 }
   
 module.exports = { Node, LinkedList };
