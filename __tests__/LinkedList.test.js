@@ -49,4 +49,17 @@ describe('insertAfter function', () => {
   
     expect(linkedList.toString()).toEqual('1 -> 2 -> 2.5 -> 3');
   });
+
+  describe('kthFromEnd function', () => {
+    it('should take a value k, and return the value of the node that is k from the end of the linked list', () => {
+      const linkedList = new LinkedList();
+      linkedList.insert(3);
+      linkedList.insert(2);
+      linkedList.insert(1);
+    
+      linkedList.insertAfter(2, 2.5);
+    
+      expect(linkedList.toString()).toEqual('1 -> 2 -> 2.5 -> 3');
+    });
+  });
 });
