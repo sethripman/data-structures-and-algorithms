@@ -26,15 +26,15 @@ describe('insertBefore function', () => {
   });
 });
 
-/*describe('insertAfter function', () => {
-  it('should take a value and append a new Node with that value at the end of the list', () => {
+describe('insertAfter function', () => {
+  it('should take a value and a new value, and append a new Node with that new value after the node that contains that value', () => {
     const linkedList = new LinkedList();
     linkedList.insert(3);
     linkedList.insert(2);
     linkedList.insert(1);
-    
-    linkedList.append(0);
-    
-    expect(linkedList.toString()).toEqual('1 -> 2 -> 3 -> 0');
+  
+    linkedList.insertAfter(2, 2.5);
+  
+    expect(linkedList.toString()).toEqual('1 ->  2 -> 2.5 -> 3');
   });
-});*/
+});
