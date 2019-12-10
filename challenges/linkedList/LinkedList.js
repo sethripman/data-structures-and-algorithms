@@ -1,0 +1,75 @@
+class Node { // from demo code
+  constructor(val, next = null) {
+    this.value = val;
+    this.next = next;
+  }
+}
+  
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+  
+  insert(val) {
+    const node = new Node(val, this.head);
+    this.head = node;
+  }
+  
+  includes(val) {
+    let searchNode = this.head;
+    while(searchNode) {
+      if(val === searchNode.value) return true;
+      searchNode = searchNode.next;
+    }
+  
+    return false;
+  }
+  
+  toString() {
+    if(!this.head) return '';
+  
+    const nodes = [];
+    let node = this.head;
+    while(node) {
+      nodes.push(node.value);
+      node = node.next;
+    }
+  
+    return nodes.join(' -> ');
+  }
+
+  append(value) {
+    let searchNode = this.head;
+    let previousNode;
+    while(searchNode) {
+      previousNode = searchNode;
+      searchNode = searchNode.next;
+    }
+    previousNode.next = new Node(value);
+  }
+
+  insertBefore(value, newValue) {
+    let currentNode = this.head;
+    const newNode = new Node(newValue);
+    while(currentNode.next.value !== value){
+      currentNode = currentNode.next;
+    }
+    
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
+  }
+
+  insertAfter(value, newValue){
+    const newNode = new Node(newValue);
+    let currentNode = this.head;
+    while(currentNode.value !== value){
+      currentNode = currentNode.next;
+    }
+
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
+  }
+
+}
+  
+module.exports = { Node, LinkedList };
