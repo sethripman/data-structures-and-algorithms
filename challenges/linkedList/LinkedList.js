@@ -49,13 +49,13 @@ class LinkedList {
   }
 
   insertBefore(value, newValue) {
-    let searchNode = this.head;
-    let previousNode;
-    while(searchNode) {
-      previousNode = searchNode;
-      searchNode = searchNode.next;
+    let currentNode = this.head;
+    const newNode = new Node(newValue);
+    while(currentNode.next.value !== value){
+      currentNode = currentNode.next;
     }
-    previousNode.next = new Node(value);
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
   }
 
 
