@@ -63,10 +63,10 @@ describe('insertAfter function', () => {
       const c = linkedList.kthFromEnd(6);
       const d = linkedList.kthFromEnd(-1);
     
-      expect(a).toEqual();
-      expect(b).toEqual();
-      expect(c).toEqual();
-      expect(d).toEqual();
+      expect(a).toEqual(4);
+      expect(b).toEqual(2);
+      expect(c).toEqual('Exception');
+      expect(d).toEqual('Exception');
 
     });
   });
