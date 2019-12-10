@@ -18,7 +18,8 @@ describe('append function', () => {
     linkedList.insert(2);
     linkedList.insert(1);
 
-    linkedList.append(4)(5);
+    linkedList.append(4);
+    linkedList.append(5);
 
     expect(linkedList.toString()).toEqual('1 -> 2 -> 3 -> 4 -> 5');
   });
