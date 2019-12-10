@@ -37,6 +37,10 @@ class LinkedList {
   
     return nodes.join(' -> ');
   }
+
+  append(value) {
+
+  }
 }
   
-module.exports = LinkedList;
+module.exports = { Node, LinkedList };
