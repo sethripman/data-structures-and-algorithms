@@ -15,7 +15,7 @@ describe('linked list merge function', () => {
 
     const mergedList = mergeLists(linkedList1, linkedList2);
 
-    expect(mergedList.toString()).toEqual('1 -> 1.5 -> 2 -> 3');
+    expect(mergedList.toString()).toEqual('1 -> 5 -> 3 -> 9 -> 2 -> 4');
   });
 
   it('should take two linked lists and zipper merge them such that nodes alternate, and return the unified linked list', () => {
@@ -30,7 +30,7 @@ describe('linked list merge function', () => {
 
     const mergedList = mergeLists(linkedList1, linkedList2);
 
-    expect(mergedList.toString()).toEqual('1 -> 1.5 -> 2 -> 3');
+    expect(mergedList.toString()).toEqual('1 -> 5 -> 3 -> 9 -> 4');
   });
 
   it('should take two linked lists and zipper merge them such that nodes alternate, and return the unified linked list', () => {
@@ -45,6 +45,6 @@ describe('linked list merge function', () => {
 
     const mergedList = mergeLists(linkedList1, linkedList2);
 
-    expect(mergedList.toString()).toEqual('1 -> 1.5 -> 2 -> 3');
+    expect(mergedList.toString()).toEqual('1 -> 5 -> 3 -> 9 -> 2');
   });
 });
