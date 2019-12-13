@@ -9,9 +9,8 @@ const mergeLists = (linkedListOne, linkedListTwo) => {
   while(currentTwo) {
     temp = currentOne.next;
     currentOne.next = currentTwo;
-    currentTwo.next = temp;
-
-    currentOne = currentOne.next;
+    currentOne = currentTwo;
+    currentTwo = temp;
   }
     
   return linkedListOne;
