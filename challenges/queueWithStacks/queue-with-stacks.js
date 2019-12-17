@@ -19,7 +19,8 @@ class Stack {
     if(!this.top) return null;
 
     const top = this.top;
-    this.top = top.next;
+    if(!this.top.next) this.top.next = null;
+    else this.top = top.next;
     return top;
   }
 
@@ -44,12 +45,15 @@ class PseudoQueue {
   }
 
   dequeue() {
-    while(this.firstStack.top !== null) {
+    if(!this.firstStack.top) return 'empty queue!';
+
+    while(this.firstStack.top) {
       this.secondStack.push((this.firstStack.pop).value);
     }
     const temp = this.secondStack.peek();
     this.secondStack.pop();
-    while(this.secondStack.top !== null) {
+
+    while(this.secondStack.top) {
       this.firstStack.push((this.secondStack.pop).value);
     }
     return temp;
