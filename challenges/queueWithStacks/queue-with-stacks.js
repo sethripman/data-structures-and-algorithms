@@ -43,9 +43,16 @@ class PseudoQueue {
     this.firstStack.push(value);
   }
 
-  // dequeue() {
-
-  // }
+  dequeue() {
+    while(this.firstStack.top) {
+      this.secondStack.push(this.firstStack.pop.value);
+    }
+    const temp = this.secondStack.pop.value;
+    while(this.secondStack.top) {
+      this.firstStack.push(this.secondStack.pop.value);
+    }
+    return temp;
+  }
 }
   
 module.exports = { PseudoQueue };
