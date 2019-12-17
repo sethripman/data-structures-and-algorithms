@@ -44,11 +44,11 @@ class PseudoQueue {
   }
 
   dequeue() {
-    while(this.firstStack.top) {
+    while(this.firstStack.top !== null) {
       this.secondStack.push(this.firstStack.pop.value);
     }
     const temp = this.secondStack.pop.value;
-    while(this.secondStack.top) {
+    while(this.secondStack.top !== null) {
       this.firstStack.push(this.secondStack.pop.value);
     }
     return temp;
