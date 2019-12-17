@@ -39,13 +39,13 @@ class PseudoQueue {
     this.secondStack = new Stack();
   }
   
-  enqueue(value) {
+  // enqueue(value) {
     
-  }
+  // }
 
-  dequeue() {
+  // dequeue() {
 
-  }
+  // }
 }
   
 module.exports = { PseudoQueue };
