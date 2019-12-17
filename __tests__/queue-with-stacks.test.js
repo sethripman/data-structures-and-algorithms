@@ -11,23 +11,15 @@ describe('queue with two stacks data structure', () => {
     });
   });
 
-  it('should have a constructor function that creates a Pseudoqueue instance with first stack and second stack properties', () => {
+  it('should have an enqueue function that takes a value and pushes it onto the firstStack', () => {
     const testQueue = new PseudoQueue();
-    expect(testQueue.firstStack).toEqual({
-      top: null
-    });
-    expect(testQueue.secondStack).toEqual({
-      top: null
-    });
+    testQueue.enqueue(1);
+    expect(testQueue.firstStack.peek()).toBe(1);
   });
 
-  it('should have a constructor function that creates a Pseudoqueue instance with first stack and second stack properties', () => {
+  it('should have an enqueue function that takes a value and pushes it onto the firstStack', () => {
     const testQueue = new PseudoQueue();
-    expect(testQueue.firstStack).toEqual({
-      top: null
-    });
-    expect(testQueue.secondStack).toEqual({
-      top: null
-    });
+    testQueue.enqueue(1);
+    expect(testQueue.firstStack.peek()).toBe(1);
   });
 });

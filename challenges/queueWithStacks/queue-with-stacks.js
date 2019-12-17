@@ -39,9 +39,9 @@ class PseudoQueue {
     this.secondStack = new Stack();
   }
   
-  // enqueue(value) {
-    
-  // }
+  enqueue(value) {
+    this.firstStack.push(value);
+  }
 
   // dequeue() {
 
