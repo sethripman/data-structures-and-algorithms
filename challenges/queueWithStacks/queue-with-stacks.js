@@ -47,17 +47,14 @@ class PseudoQueue {
     if(!this.firstStack.top) return 'empty queue!';
 
     while(this.firstStack.top) {
-      this.secondStack.push((this.firstStack.pop).value);
-      console.log(this.firstStack.top, 'first stack');
+      this.secondStack.push(this.firstStack.pop().value);
     }
 
     const temp = this.secondStack.peek();
     this.secondStack.pop();
     
     while(this.secondStack.top) {
-      this.firstStack.push((this.secondStack.pop).value);
-      console.log(this.secondStack.top, 'second stack');
-
+      this.firstStack.push(this.secondStack.pop().value);
     }
     return temp;
   }
