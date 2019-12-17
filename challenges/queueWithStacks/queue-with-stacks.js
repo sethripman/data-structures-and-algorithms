@@ -19,8 +19,7 @@ class Stack {
     if(!this.top) return null;
 
     const top = this.top;
-    if(!this.top.next) this.top.next = null;
-    else this.top = top.next;
+    this.top = top.next;
     return top;
   }
 
@@ -49,15 +48,24 @@ class PseudoQueue {
 
     while(this.firstStack.top) {
       this.secondStack.push((this.firstStack.pop).value);
+      console.log(this.firstStack.top, 'first stack');
     }
+
     const temp = this.secondStack.peek();
     this.secondStack.pop();
-
+    
     while(this.secondStack.top) {
       this.firstStack.push((this.secondStack.pop).value);
+      console.log(this.secondStack.top, 'second stack');
+
     }
     return temp;
   }
 }
   
 module.exports = { PseudoQueue };
+
+const myStack = new PseudoQueue();
+myStack.enqueue(1);
+myStack.enqueue(2);
+const result = myStack.dequeue();
