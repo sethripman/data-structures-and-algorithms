@@ -61,8 +61,3 @@ class PseudoQueue {
 }
   
 module.exports = { PseudoQueue };
-
-const myStack = new PseudoQueue();
-myStack.enqueue(1);
-myStack.enqueue(2);
-const result = myStack.dequeue();
