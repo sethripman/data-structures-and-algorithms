@@ -40,17 +40,13 @@ class LinkedList {
     return nodes.join(' -> ');
   }
 
-  append(value) {
-    const newNode = new Node(value);
-    if(!this.head) {
-      this.head = newNode;
-    } else {
-      let searchNode = this.head;
-      while(searchNode) {
-        searchNode = searchNode.next;
-      }
-      searchNode.next = newNode;
+  append(value){
+    const node = new Node(value);
+    let current = this.head;
+    while(current.next !== null){
+      current = current.next;
     }
+    current.next = node;
   }
 
   insertBefore(value, newValue) {

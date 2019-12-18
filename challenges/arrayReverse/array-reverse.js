@@ -46,4 +46,3 @@ const popReverse = (array) => {
 const mapReverse = array => [...array].map(array.pop, array);
 
 module.exports = { mapReverse };
-
