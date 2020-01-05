@@ -19,7 +19,7 @@ class Queue {
   }
 
   dequeue(preference){
-    if(!preference){
+    if(preference.toLowerCase() !== 'cat' && preference.toLowerCase() !== 'dog'){
       const popped = this.front.value;
       this.front = this.front.next;
       return popped;
