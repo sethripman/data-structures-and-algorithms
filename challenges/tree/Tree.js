@@ -6,27 +6,17 @@ class Node {
   }
 }
   
-class LinkedList {
+class BinaryTree {
   constructor() {
     this.head = null;
   }
   
-  insert(val) {
+  preOrder() {
     const node = new Node(val, this.head);
     this.head = node;
   }
   
-  includes(val) {
-    let searchNode = this.head;
-    while(searchNode) {
-      if(val === searchNode.value) return true;
-      searchNode = searchNode.next;
-    }
-  
-    return false;
-  }
-  
-  toString() {
+  inOrder() {
     if(!this.head) return '';
   
     const nodes = [];
@@ -39,51 +29,16 @@ class LinkedList {
     return nodes.join(' -> ');
   }
 
-  append(value){
-    const node = new Node(value);
-    let current = this.head;
-    while(current.next !== null){
-      current = current.next;
+  postOrder() {
+    let searchNode = this.head;
+    while(searchNode) {
+      if(val === searchNode.value) return true;
+      searchNode = searchNode.next;
     }
-    current.next = node;
+  
+    return false;
   }
-
-  insertBefore(value, newValue) {
-    let currentNode = this.head;
-    const newNode = new Node(newValue);
-    while(currentNode.next.value !== value){
-      currentNode = currentNode.next;
-    }
-    
-    newNode.next = currentNode.next;
-    currentNode.next = newNode;
-  }
-
-  insertAfter(value, newValue){
-    const newNode = new Node(newValue);
-    let currentNode = this.head;
-    while(currentNode.value !== value){
-      currentNode = currentNode.next;
-    }
-
-    newNode.next = currentNode.next;
-    currentNode.next = newNode;
-  }
-
-  kthFromEnd(k){
-    const arrayFromList = [];
-    let current = this.head;
-
-    if(Math.sign(k) === -1 || !current) return 'Exception';
-
-    while(current) {
-      arrayFromList.push(current.value);
-      current = current.next;
-    }
-
-    if(k > arrayFromList.length) return 'Exception';
-    return mapReverse(arrayFromList)[k];
-  }
+  
 }
   
-module.exports = { Node, LinkedList };
+module.exports = { Node, BinaryTree };
