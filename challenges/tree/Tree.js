@@ -9,6 +9,7 @@ class Node {
 class BinarySearchTree {
   constructor(value = null) {
     this.root = value;
+    this.returnArray = [];
   }
 
   add() {
@@ -19,9 +20,16 @@ class BinarySearchTree {
     return false;
   }
   
-  preOrder() {
-    const preArray = [];
+  preOrder(node) {
     
+    if(node !== null) {
+      this.returnArray.push(node.value);
+      this.preOrder(node.left);
+      this.preOrder(node.right);
+    }
+    
+    const preArray = [...this.returnArray];
+    this.returnArray = [];
     return preArray;
   }
   
