@@ -1,9 +1,8 @@
-const { mapReverse } = require('../arrayReverse/array-reverse');
-
-class Node { // from demo code
-  constructor(val, next = null) {
-    this.value = val;
-    this.next = next;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
 }
   
