@@ -16,8 +16,18 @@ class BinarySearchTree {
     return false;
   }
 
-  contains(value) {
-    return false;
+  contains(node, value) {
+
+    if(node === null) 
+      return false; 
+  
+    else if(value < node.value) 
+      return this.search(node.left, value); 
+  
+    else if(value > node.value) 
+      return this.search(node.right, value); 
+
+    else return (value === node.value);
   }
   
   preOrder(node) {
