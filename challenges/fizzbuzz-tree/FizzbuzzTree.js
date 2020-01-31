@@ -47,10 +47,10 @@ class BinarySearchTree {
       return false; 
   
     else if(value < node.value) 
-      return this.search(node.left, value); 
+      return this.contains(node.left, value); 
   
     else if(value > node.value) 
-      return this.search(node.right, value); 
+      return this.contains(node.right, value); 
 
     else return (value === node.value);
   }
