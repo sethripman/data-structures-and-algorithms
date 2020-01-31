@@ -33,15 +33,29 @@ class BinarySearchTree {
     return preArray;
   }
   
-  inOrder() {
-    const inArray = [];
+  inOrder(node) {
 
+    if(node !== null) {
+      this.inOrder(node.left);
+      this.returnArray.push(node.value);
+      this.inOrder(node.right);
+    }
+    
+    const inArray = [...this.returnArray];
+    this.returnArray = [];
     return inArray;
   }
 
-  postOrder() {
-    const postArray = [];
+  postOrder(node) {
 
+    if(node !== null) {
+      this.preOrder(node.left);
+      this.preOrder(node.right);
+      this.returnArray.push(node.value);
+    }
+    
+    const postArray = [...this.returnArray];
+    this.returnArray = [];
     return postArray;
   }
   
