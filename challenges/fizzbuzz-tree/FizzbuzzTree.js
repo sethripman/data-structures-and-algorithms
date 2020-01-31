@@ -41,7 +41,7 @@ class BinarySearchTree {
     return newNode;
   } 
 
-  contains(node, value) {
+  contains(node = this.root, value) {
 
     if(node === null) 
       return false; 
