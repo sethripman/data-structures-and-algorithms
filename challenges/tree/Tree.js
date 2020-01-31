@@ -12,9 +12,33 @@ class BinarySearchTree {
     this.returnArray = [];
   }
 
-  add() {
-    return false;
+  addHelper(node, newNode) {
+    if(newNode.data < node.data) 
+    { 
+      if(node.left === null) 
+        node.left = newNode; 
+      else
+        this.addHelper(node.left, newNode);  
+    } 
+  
+    else
+    { 
+      if(node.right === null) 
+        node.right = newNode; 
+      else
+        this.addHelper(node.right, newNode); 
+    } 
   }
+
+  add(value) {
+    const newNode = new Node(value);
+    if(this.root === null) {
+      this.root = newNode;
+      return newNode;
+    } else this.addHelper(this.root, newNode);
+
+    return newNode;
+  } 
 
   contains(node, value) {
 
