@@ -6,39 +6,37 @@ class Node {
   }
 }
   
-class BinaryTree {
-  constructor() {
-    this.head = null;
+class BinarySearchTree {
+  constructor(value = null) {
+    this.root = value;
+  }
+
+  add() {
+    return false;
+  }
+
+  contains(value) {
+    return false;
   }
   
   preOrder() {
-    const node = new Node(val, this.head);
-    this.head = node;
+    const preArray = [];
+    
+    return preArray;
   }
   
   inOrder() {
-    if(!this.head) return '';
-  
-    const nodes = [];
-    let node = this.head;
-    while(node) {
-      nodes.push(node.value);
-      node = node.next;
-    }
-  
-    return nodes.join(' -> ');
+    const inArray = [];
+
+    return inArray;
   }
 
   postOrder() {
-    let searchNode = this.head;
-    while(searchNode) {
-      if(val === searchNode.value) return true;
-      searchNode = searchNode.next;
-    }
-  
-    return false;
+    const postArray = [];
+
+    return postArray;
   }
   
 }
   
-module.exports = { Node, BinaryTree };
+module.exports = { Node, BinarySearchTree };
