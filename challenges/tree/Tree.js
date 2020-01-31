@@ -8,12 +8,13 @@ class Node {
   
 class BinarySearchTree {
   constructor(value = null) {
-    this.root = value;
+    if(value === null) this.root = value;
+    else this.root = new Node(value);
     this.returnArray = [];
   }
 
   addHelper(node, newNode) {
-    if(newNode.data < node.data) 
+    if(newNode.value < node.value) 
     { 
       if(node.left === null) 
         node.left = newNode; 
@@ -53,6 +54,8 @@ class BinarySearchTree {
 
     else return (value === node.value);
   }
+
+  cleanReturnArray() { this.returnArray = []; }
   
   preOrder(node) {
     
@@ -62,9 +65,7 @@ class BinarySearchTree {
       this.preOrder(node.right);
     }
     
-    const preArray = [...this.returnArray];
-    this.returnArray = [];
-    return preArray;
+    return this.returnArray;
   }
   
   inOrder(node) {
@@ -75,9 +76,7 @@ class BinarySearchTree {
       this.inOrder(node.right);
     }
     
-    const inArray = [...this.returnArray];
-    this.returnArray = [];
-    return inArray;
+    return this.returnArray;
   }
 
   postOrder(node) {
@@ -88,9 +87,7 @@ class BinarySearchTree {
       this.returnArray.push(node.value);
     }
     
-    const postArray = [...this.returnArray];
-    this.returnArray = [];
-    return postArray;
+    return this.returnArray;
   }
   
 }
