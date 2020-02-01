@@ -2,10 +2,14 @@
 
 const { BinarySearchTree } = require('../tree/Tree');
 
-const FizzbuzzTree = ( BST ) => {
-  const outputTree = new BinarySearchTree();
+class UtilityTree extends BinarySearchTree {
+  constructor(value = null) {
+    super(value);
+  }
 
-  const mutateArray = BST.
 
-  return
-};
+}
+
+const FizzbuzzTree = (BST) => BST;
+
+module.exports = { FizzbuzzTree };
