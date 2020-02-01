@@ -2,14 +2,18 @@
 
 const modifiedPreOrderTraversal = (node, mutateArray = []) => {
   if(node !== null) {
-    mutateArray.push(node.value);
+    mutateArray.push(node);
     modifiedPreOrderTraversal(node.left, mutateArray);
     modifiedPreOrderTraversal(node.right, mutateArray);
   }
+
+  // now map over the array node.value, applying the rules of fizzbuzz
   
   return mutateArray;
 };
 
-const FizzbuzzTree = (BST) => modifiedPreOrderTraversal(BST);
+const FizzbuzzTree = (BST) => modifiedPreOrderTraversal(BST.root);
 
 module.exports = { FizzbuzzTree };
+
+// Reach out to Kevin Grayson with Vacasa on Linkedin for coffee on automation, tech debt, property management, and the intersection of QA engineering management and design
