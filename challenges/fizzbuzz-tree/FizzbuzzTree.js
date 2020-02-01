@@ -1,15 +1,22 @@
 // define a new tree where traversal returns an array of nodes instead of the values therein, then mutate the nodes, and the original BST will be correct without making a new BST
 
-const { BinarySearchTree } = require('../tree/Tree');
-
-class UtilityTree extends BinarySearchTree {
-  constructor(value = null) {
-    super(value);
+const modifiedPreOrderTraversal = (node, mutateArray = []) => {
+  if(node !== null) {
+    mutateArray.push(node.value);
+    modifiedPreOrderTraversal(node.left, mutateArray);
+    modifiedPreOrderTraversal(node.right, mutateArray);
   }
+  
+  return mutateArray;
+};
 
-
+function preorderNodeArray(BST) {    
+  
 }
 
-const FizzbuzzTree = (BST) => BST;
+
+const FizzbuzzTree = (BST) => {
+  return BST;
+};
 
 module.exports = { FizzbuzzTree };
