@@ -10,13 +10,6 @@ const modifiedPreOrderTraversal = (node, mutateArray = []) => {
   return mutateArray;
 };
 
-function preorderNodeArray(BST) {    
-  
-}
-
-
-const FizzbuzzTree = (BST) => {
-  return BST;
-};
+const FizzbuzzTree = (BST) => modifiedPreOrderTraversal(BST);
 
 module.exports = { FizzbuzzTree };
